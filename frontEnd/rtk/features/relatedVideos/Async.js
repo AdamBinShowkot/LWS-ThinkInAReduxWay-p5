@@ -12,9 +12,9 @@ const fetchRelatedVideos=createAsyncThunk(
                 queryString+=`tags_like=${currentTag}`
             }
             return queryString;
-        });
+        },"");
         const urls='http://localhost:9000/videos?'+queryStrings;
-       // console.log(urls)
+        //console.log(urls)
         const response=await fetch(urls);
 
         const videos=await response.json();
